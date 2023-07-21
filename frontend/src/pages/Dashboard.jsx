@@ -8,7 +8,7 @@ import Spinner from "../components/Spinner";
 const Dashboard = () => {
   const { user } = useSelector((state) => state.auth);
   const [text, setText] = useState("");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { posts, isLoading, isError, isSuccess, message } = useSelector(

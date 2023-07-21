@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "server": "nodemon backend/index.js",
     "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "vercel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "mongoose": "^7.3.4"
   },
   "devDependencies": {
+    "@vercel/node": "^2.15.6",
     "concurrently": "^8.2.0",
     "nodemon": "^3.0.1"
   }
