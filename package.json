@@ -8,11 +8,10 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node backend/index.js",
-    "server": "node backend/index.js",
+    "start": "node backend/index",
+    "server": "node backend/index",
     "client": "npm run dev --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "vercel-build": "echo hello"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
