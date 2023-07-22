@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/index.js",
+    "start": "node backend/index.js",
+    "server": "node backend/index.js",
     "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "vercel-build": "echo hello"
