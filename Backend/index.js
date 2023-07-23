@@ -36,7 +36,7 @@ app.use('/api/users', userRouter);
 //         res.send('API is running....');
 //     });
 // }
-
+app.use(express.static(path.join(__dirname, './routes')))
 //error handler
 app.use(errorHandler)
 
