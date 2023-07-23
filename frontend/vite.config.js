@@ -8,7 +8,7 @@ export default defineConfig({
     port: '3000',
     proxy: {
       '/api': {
-        target: 'https://mern-xn1g.vercel.app/',
+        target: 'https://mern-app-60nb.onrender.com/',
         changeOrigin: true,
       }
     }
