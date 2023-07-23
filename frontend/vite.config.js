@@ -5,12 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 'https://mern-orcin.vercel.app/',
-    proxy: {
-      '/api': {
-        target: 'https://mern-app-60nb.onrender.com/',
-        changeOrigin: true,
-      }
-    }
+    port: '3000',
+
   }
 })

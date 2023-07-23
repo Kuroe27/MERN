@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoutes.js";
 import connectDB from './config/db.js';
 import path from 'path'
 import url from 'url';
+import cors from 'cors'
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 config();
@@ -23,6 +24,8 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/post', router);
 app.use('/api/users', userRouter);
+app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://mern-orcin.vercel.app' }));
 
 // if (process.env.NODE_ENV === 'production') {
 //     const __dirname = path.resolve();

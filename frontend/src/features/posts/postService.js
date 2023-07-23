@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = '/api/post'
+const API_URL = 'https://mern-app-60nb.onrender.com/api/post'
 
 const createPost = async (postData, token) => {
     const config = {
