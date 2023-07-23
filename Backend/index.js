@@ -18,15 +18,24 @@ const port = process.env.PORT
 const app = express();
 
 // body parse middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+// Allow requests from specific origins
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://mern-orcin.vercel.app'
+];
 
+app.use(cors({
+    origin: allowedOrigins
+}));
+
+// Routes
 app.use('/api/post', router);
 app.use('/api/users', userRouter);
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors({ origin: 'https://mern-orcin.vercel.app' }));
 
+// Serve static files (uncomment if needed)
 // if (process.env.NODE_ENV === 'production') {
 //     const __dirname = path.resolve();
 //     app.use(express.static(path.join(__dirname, '/frontend/dist')));
@@ -39,12 +48,13 @@ app.use(cors({ origin: 'https://mern-orcin.vercel.app' }));
 //         res.send('API is running....');
 //     });
 // }
-app.use(express.static(path.join(__dirname, './routes')))
-//error handler
-app.use(errorHandler)
 
+// Serve static files from './routes' directory (modify if needed)
+app.use(express.static(path.join(__dirname, './routes')));
+
+// Error handler
+app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`${port}`.red);
 });
-
