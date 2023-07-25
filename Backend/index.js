@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 // Allow requests from specific origins
 const allowedOrigins = [
     'http://localhost:3000',
+    'http://localhost:5173',
     'https://mern-orcin.vercel.app'
 ];
 
